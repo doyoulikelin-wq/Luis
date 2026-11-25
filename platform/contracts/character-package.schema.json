@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Luis web preview character package v1",
+  "type":"object",
+  "required":["schema","asset","name","persona","accent"],
+  "properties":{
+    "schema":{"const":"luis.character.v1"},
+    "asset":{"const":"builtin:upper-body.v1"},
+    "name":{"type":"string","minLength":1,"maxLength":32,"pattern":"\\S"},
+    "persona":{"enum":["calm","lively"]},
+    "accent":{"type":"string","pattern":"^#[0-9a-fA-F]{6}$"}
+  },
+  "additionalProperties":false
+}

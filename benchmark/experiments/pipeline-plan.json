@@ -1,0 +1,219 @@
+{
+  "status": "11 个生产流程消融设计。已实跑的是独立记录的合成骨架 2×2 和网页本机脚本 2×2；这里的模型与线上服务对照仍待执行。",
+  "shared": {
+    "source_manifest": "REPLACE_WITH_IMMUTABLE_ID",
+    "seed_policy": "预登记相同种子或配对重复策略",
+    "template_version": "REPLACE",
+    "generator_snapshot": "REPLACE",
+    "workflow_version": "REPLACE",
+    "renderer_build": "REPLACE",
+    "device_profile": "REPLACE",
+    "judge_snapshot": "REPLACE",
+    "review_rubric": "REPLACE",
+    "attempt_budget": "固定重试次数、人工干预和结束条件",
+    "flags": {
+      "identity_features": true,
+      "length_constraint": true,
+      "joint_reconnection": true,
+      "twist_distribution": true,
+      "transition_blending": true,
+      "package_preflight": true,
+      "persona_examples": true,
+      "long_term_recall": true,
+      "forget_tombstone": true,
+      "action_fallback": true,
+      "guided_correction": true
+    }
+  },
+  "runs": {
+    "full": {},
+    "no_identity": {
+      "flags": {
+        "identity_features": false
+      }
+    },
+    "no_length": {
+      "flags": {
+        "length_constraint": false
+      }
+    },
+    "no_reconnect": {
+      "flags": {
+        "joint_reconnection": false
+      }
+    },
+    "no_twist": {
+      "flags": {
+        "twist_distribution": false
+      }
+    },
+    "no_blend": {
+      "flags": {
+        "transition_blending": false
+      }
+    },
+    "no_preflight": {
+      "flags": {
+        "package_preflight": false
+      }
+    },
+    "no_examples": {
+      "flags": {
+        "persona_examples": false
+      }
+    },
+    "no_recall": {
+      "flags": {
+        "long_term_recall": false
+      }
+    },
+    "no_tombstone": {
+      "flags": {
+        "forget_tombstone": false
+      }
+    },
+    "no_fallback": {
+      "flags": {
+        "action_fallback": false
+      }
+    },
+    "no_guidance": {
+      "flags": {
+        "guided_correction": false
+      }
+    }
+  },
+  "comparisons": [
+    {
+      "stage": "reference",
+      "baseline": "full",
+      "candidate": "no_identity",
+      "only_variable": "identity_features",
+      "case_ids": [
+        "BW02",
+        "RT01",
+        "SW01"
+      ],
+      "readout": "模板内特征推荐；冻结部件目录与同一模型，记录配饰丢失、左右颠倒和额外人工确认。"
+    },
+    {
+      "stage": "rig",
+      "baseline": "full",
+      "candidate": "no_length",
+      "only_variable": "length_constraint",
+      "case_ids": [
+        "AN02",
+        "AN04"
+      ],
+      "readout": "同一输出进入修整节点；比较最大骨长偏差、局部屈曲方向及其他关节的代价。"
+    },
+    {
+      "stage": "rig",
+      "baseline": "full",
+      "candidate": "no_reconnect",
+      "only_variable": "joint_reconnection",
+      "case_ids": [
+        "AN03",
+        "AN06"
+      ],
+      "readout": "同一骨架及独立段标记输入，比较关节最大间隙及最终蒙皮接缝。"
+    },
+    {
+      "stage": "retarget",
+      "baseline": "full",
+      "candidate": "no_twist",
+      "only_variable": "twist_distribution",
+      "case_ids": [
+        "AN05",
+        "OC05",
+        "RT02"
+      ],
+      "readout": "同一角色与母片，比较轴向转角、袖口塌陷和肩带协同。"
+    },
+    {
+      "stage": "timing",
+      "baseline": "full",
+      "candidate": "no_blend",
+      "only_variable": "transition_blending",
+      "case_ids": [
+        "TM02",
+        "TM04",
+        "BW06"
+      ],
+      "readout": "固定事件序列、播放器、相机与设备，比较接缝速度、切换弹跳和打断尾音。"
+    },
+    {
+      "stage": "package",
+      "baseline": "full",
+      "candidate": "no_preflight",
+      "only_variable": "package_preflight",
+      "case_ids": [
+        "BW01",
+        "SW03",
+        "CA02"
+      ],
+      "readout": "固定初始产物与故障库；同时报告发送至审核的所有尝试、正确拦截、误拦、成功安装与每个合格包成本。"
+    },
+    {
+      "stage": "persona",
+      "baseline": "full",
+      "candidate": "no_examples",
+      "only_variable": "persona_examples",
+      "case_ids": [
+        "BW04",
+        "MG01",
+        "LM04"
+      ],
+      "readout": "同一角色卡、请求和底模，仅移除正反例。用独立盲评区分措辞、人设边界和动作偏好。"
+    },
+    {
+      "stage": "memory",
+      "baseline": "full",
+      "candidate": "no_recall",
+      "only_variable": "long_term_recall",
+      "case_ids": [
+        "BW05",
+        "MG02",
+        "MG03",
+        "NB01",
+        "AG03"
+      ],
+      "readout": "同一模型、用户范围、历史与上下文预算。用刚写入、新会话、未知和更正用例比较；隔离条件固定。"
+    },
+    {
+      "stage": "memory",
+      "baseline": "full",
+      "candidate": "no_tombstone",
+      "only_variable": "forget_tombstone",
+      "case_ids": [
+        "NB02",
+        "AG02"
+      ],
+      "readout": "在隔离的合成数据中回放删除、旧任务重试、重建。记录遗忘后旧事实复活率、误删。"
+    },
+    {
+      "stage": "runtime",
+      "baseline": "full",
+      "candidate": "no_fallback",
+      "only_variable": "action_fallback",
+      "case_ids": [
+        "SW03",
+        "VW03",
+        "CA02"
+      ],
+      "readout": "同一角色包和事件脚本，比较缺动作、旧事件抢占、断点恢复，记录每次交付状态。"
+    },
+    {
+      "stage": "creation",
+      "baseline": "full",
+      "candidate": "no_guidance",
+      "only_variable": "guided_correction",
+      "case_ids": [
+        "BW01",
+        "LM01",
+        "CA01"
+      ],
+      "readout": "同样的立绘、模板、操作目标和帮助预算。由经验匹配的不同新手交叉平衡素材，分别记独立完成、放弃与人工工时，避免同一人重复练熟同一图。"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "status": "示例计划，未运行。示例模型、母版、素材和动作的标识需替换为实际不可变版本。",
+  "experiment": "根据同一张参考图推荐已授权的 3D 半身母版部件及颜色，在 App 固定镜位验证输出。",
+  "shared": {
+    "template": "EXAMPLE/已绑定人形母版-v1",
+    "parts_catalog": "EXAMPLE/可选脸型-发型-服饰-配件-v1",
+    "source_manifest": "EXAMPLE/参考图与标注清单-v1",
+    "case_ids_by_split": {
+      "dev": ["BW02", "VW01"],
+      "holdout": ["LM02", "SW01"]
+    },
+    "seeds": [1729],
+    "prompt": "EXAMPLE/相同部件推荐提示与输出字段-v1",
+    "identity_extractor_version": "EXAMPLE/冻结版身份特征提取器-v1",
+    "action_script": "EXAMPLE/相同正面-遮挡-举手动作脚本-v1",
+    "renderer": "EXAMPLE/同一骨架-相机-灯光-App构建-v1",
+    "max_retries_per_case": 1,
+    "retry_policy": "仅遇任务执行错误时重试一次，取首个成功输出；连续失败留缺失记录。",
+    "judge": "EXAMPLE/同一盲审模型版本-提示-评分规则-v1"
+  },
+  "runs": {
+    "A0": {"generation_model": "EXAMPLE/model-A", "identity_feature_node": false},
+    "A1": {"generation_model": "EXAMPLE/model-A", "identity_feature_node": true},
+    "B0": {"generation_model": "EXAMPLE/model-B", "identity_feature_node": false},
+    "B1": {"generation_model": "EXAMPLE/model-B", "identity_feature_node": true}
+  },
+  "interpretation": [
+    "生成模型只在同一部件目录内推荐部件与参数。两模型必须接受相同的参考图与输出契约。开启节点时追加同一提取器产生的身份特征，关闭时留空。",
+    "A1−A0 与 B1−B0 分别描述同一模型内开启节点导致的观察差；B0−A0 与 B1−A1 分别描述相同节点状态下换模型的观察差。",
+    "交互差为 (B1−B0)−(A1−A0)。使用同一素材、种子、检查点的四个有效判定，每个完整素材组先算组内平均通过率，再给各组相同权重。缺少完整四方证据的组单列。",
+    "每个结果文件对应单次运行。多种子时逐个种子重复四组对照，先在同一素材内汇总种子，再按素材汇总。本示例每个 split 仅两个素材组，描述差异和缺口即可。"
+  ]
+}

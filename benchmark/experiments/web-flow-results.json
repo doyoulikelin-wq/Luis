@@ -1,0 +1,161 @@
+{
+  "schema": "luis.web-flow-experiment.v1",
+  "measured_at": "2026-11-25T11:56:58.454Z",
+  "browser": "158.0.8127.37",
+  "webgl": {
+    "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+    "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M3 Pro, Unspecified Version)"
+  },
+  "design": "Scripted 2×2 integration check on a single synthetic template; four isolated ephemeral browser contexts, one observation per condition.",
+  "scope": "Browser UI, public pack export/import, per-instance local nickname, scripted dialogue/action and exported numeric motion. No generative-model, human preference or real-device quality score.",
+  "frozen": {
+    "asset": "builtin:upper-body.v1",
+    "name": "书店店员",
+    "accent": "#42645b",
+    "scene": "我有点累",
+    "source_private_nickname": "模板访客",
+    "requested_nicknames": [
+      "读者青禾",
+      "读者秋棠"
+    ],
+    "web_file_sha256": {
+      "index.html": "e857b3c8c95cd7852b1633ab6d04004174a74253d47e398fb85783d9cc46c1bb",
+      "app.js": "8ed7d64e3680e868166bd0890adbf8322697561d1923a84877e3058a0ecfdca5",
+      "viewer.js": "e916940e62947a8d68cd179c6aaef8100518fe1f6010d5bfe8da31b2c1fc557f",
+      "figure.js": "f49e72271fea247e1d9636a0967722393cfdebd298c171c7b75080c4093959dc",
+      "pose.js": "c2398469510cdb1f962e47c393897c9050028f586977ee0f51bc6279f0b82055",
+      "companion.js": "e10a03e623d2137ff80a98fa899a092b19068af1453912887ee998487617d628"
+    },
+    "evaluator_file_sha256": "cf0904911a47844e628eef69d984237f5ab93511839bb495982b06fb19f6ca53",
+    "experiment_file_sha256": "f6fd9438f08ec802ce2f2e4540c497dcefbd18f0d0f6aaa3d17dada3610c32a8",
+    "rig_profile_file_sha256": "ff6bfeab2acf4aed576afcc40b520ce57d2c9e5249c1c58f571bee0b78a93cb2"
+  },
+  "observations": [
+    {
+      "persona": "calm",
+      "consent": false,
+      "verdict": "pass",
+      "pack_sha256": "dbe6c2a2954ee9711dd2aa0b45bd683367c35313c6026c1a2c3d7b2c1ab13201",
+      "instance_count": 2,
+      "scene": {
+        "reply": "那就坐一会儿。我听着。",
+        "action": "nod"
+      },
+      "memory": {
+        "imported_instance_before_consent": "我还没有记下你的称呼。",
+        "recall_after_save_and_reload": "我还没有记下你的称呼。",
+        "disabled_write_feedback": "请先开启本机记忆。",
+        "source_after_target_changes": "你希望我叫你模板访客。",
+        "target_after_switch_back": "我还没有记下你的称呼。",
+        "final_stored_private_record": {
+          "remember": false,
+          "nickname": ""
+        }
+      },
+      "trace": {
+        "action": "nod",
+        "frames": 85,
+        "fps": 30,
+        "file_sha256": "928c95a386b85b627039742e51f542d267279ffbb0c685a91b8b6c8346ea80f1",
+        "fixed_profile_verdict": "pass",
+        "passed_checks": 6,
+        "reopened_in_app": true
+      }
+    },
+    {
+      "persona": "calm",
+      "consent": true,
+      "verdict": "pass",
+      "pack_sha256": "dbe6c2a2954ee9711dd2aa0b45bd683367c35313c6026c1a2c3d7b2c1ab13201",
+      "instance_count": 2,
+      "scene": {
+        "reply": "那就坐一会儿。我听着。",
+        "action": "nod"
+      },
+      "memory": {
+        "imported_instance_before_consent": "我还没有记下你的称呼。",
+        "recall_after_save_and_reload": "你希望我叫你读者青禾。",
+        "corrected_after_reload": "你希望我叫你读者秋棠。",
+        "forgotten_after_reload": "我还没有记下你的称呼。",
+        "source_after_target_changes": "你希望我叫你模板访客。",
+        "target_after_switch_back": "我还没有记下你的称呼。",
+        "final_stored_private_record": {
+          "remember": true,
+          "nickname": ""
+        }
+      },
+      "trace": {
+        "action": "nod",
+        "frames": 85,
+        "fps": 30,
+        "file_sha256": "928c95a386b85b627039742e51f542d267279ffbb0c685a91b8b6c8346ea80f1",
+        "fixed_profile_verdict": "pass",
+        "passed_checks": 6,
+        "reopened_in_app": true
+      }
+    },
+    {
+      "persona": "lively",
+      "consent": false,
+      "verdict": "pass",
+      "pack_sha256": "c67d1b1ea5b97c7cb4a00cb4e7602a19e3a1ad90572e3a57d833d60dd64373e7",
+      "instance_count": 2,
+      "scene": {
+        "reply": "辛苦啦！想吐槽两句，还是一起放空一下？",
+        "action": "wave"
+      },
+      "memory": {
+        "imported_instance_before_consent": "我还没有记下你的称呼。",
+        "recall_after_save_and_reload": "我还没有记下你的称呼。",
+        "disabled_write_feedback": "请先开启本机记忆。",
+        "source_after_target_changes": "你希望我叫你模板访客。",
+        "target_after_switch_back": "我还没有记下你的称呼。",
+        "final_stored_private_record": {
+          "remember": false,
+          "nickname": ""
+        }
+      },
+      "trace": {
+        "action": "wave",
+        "frames": 109,
+        "fps": 30,
+        "file_sha256": "75bdcb979a3d729d5d8a530bb6bdd6c62765db3e2b795323a2f2f110f4bd15b4",
+        "fixed_profile_verdict": "pass",
+        "passed_checks": 6,
+        "reopened_in_app": true
+      }
+    },
+    {
+      "persona": "lively",
+      "consent": true,
+      "verdict": "pass",
+      "pack_sha256": "c67d1b1ea5b97c7cb4a00cb4e7602a19e3a1ad90572e3a57d833d60dd64373e7",
+      "instance_count": 2,
+      "scene": {
+        "reply": "辛苦啦！想吐槽两句，还是一起放空一下？",
+        "action": "wave"
+      },
+      "memory": {
+        "imported_instance_before_consent": "我还没有记下你的称呼。",
+        "recall_after_save_and_reload": "你希望我叫你读者青禾。",
+        "corrected_after_reload": "你希望我叫你读者秋棠。",
+        "forgotten_after_reload": "我还没有记下你的称呼。",
+        "source_after_target_changes": "你希望我叫你模板访客。",
+        "target_after_switch_back": "我还没有记下你的称呼。",
+        "final_stored_private_record": {
+          "remember": true,
+          "nickname": ""
+        }
+      },
+      "trace": {
+        "action": "wave",
+        "frames": 109,
+        "fps": 30,
+        "file_sha256": "75bdcb979a3d729d5d8a530bb6bdd6c62765db3e2b795323a2f2f110f4bd15b4",
+        "fixed_profile_verdict": "pass",
+        "passed_checks": 6,
+        "reopened_in_app": true
+      }
+    }
+  ]
+}

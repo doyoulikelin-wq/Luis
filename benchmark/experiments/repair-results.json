@@ -1,0 +1,225 @@
+{
+  "experiment": "Synthetic segment length projection × parent-child reconnection",
+  "design": "One deterministic rig, three related clips, one identical corrupted input per action for all four cells. Descriptive checks on supplied samples only.",
+  "controls": "Same source frames, fixed camera-independent coordinates, evaluator, geometry thresholds, fps and authored clip windows. No tuning on candidates.",
+  "cells": {
+    "off": {
+      "length": false,
+      "reconnect": false
+    },
+    "length": {
+      "length": true,
+      "reconnect": false
+    },
+    "reconnect": {
+      "length": false,
+      "reconnect": true
+    },
+    "both": {
+      "length": true,
+      "reconnect": true
+    }
+  },
+  "scope_limits": [
+    "Both constraints are provided by construction. Tests measure numerical satisfaction after repair, not independent physical recovery.",
+    "Endpoint checks cannot observe axial twist, skin deformation, interpenetration, silhouette identity, or naturalness.",
+    "These are three clips on one synthetic mannequin, not three independent characters or a human-motion quality study."
+  ],
+  "files_sha256": {
+    "pose.js": "c2398469510cdb1f962e47c393897c9050028f586977ee0f51bc6279f0b82055",
+    "rig-profile.json": "ff6bfeab2acf4aed576afcc40b520ce57d2c9e5249c1c58f571bee0b78a93cb2",
+    "repair_ablation.py": "521759a7e30d2589b3f99666106d606960bc837dcf3250ce0bc64c6505b29c82",
+    "motion.py": "cf0904911a47844e628eef69d984237f5ab93511839bb495982b06fb19f6ca53"
+  },
+  "actions": {
+    "idle": {
+      "frames": 121,
+      "duration_s": 4.0,
+      "input_sha256": "31c3a8e509c6d8e3aa6b7f56cc32ad9374f74e5bd646165916d93419424e2422",
+      "clean_control": {
+        "verdict": "pass",
+        "failed_checks": [],
+        "abstained_checks": [],
+        "length_violations": 0,
+        "gap_violations": 0,
+        "max_length_error_pct": 0.0,
+        "max_gap_mm": 0.0
+      },
+      "clean_with_both": {
+        "verdict": "pass",
+        "max_marker_displacement_mm": 0.0
+      },
+      "variants": {
+        "off": {
+          "verdict": "fail",
+          "failed_checks": [
+            "bone_length",
+            "joint_gap"
+          ],
+          "abstained_checks": [],
+          "length_violations": 77,
+          "gap_violations": 73,
+          "max_length_error_pct": 58.0,
+          "max_gap_mm": 91.787799
+        },
+        "length": {
+          "verdict": "fail",
+          "failed_checks": [
+            "joint_gap"
+          ],
+          "abstained_checks": [],
+          "length_violations": 0,
+          "gap_violations": 73,
+          "max_length_error_pct": 0.0,
+          "max_gap_mm": 91.787799
+        },
+        "reconnect": {
+          "verdict": "fail",
+          "failed_checks": [
+            "bone_length"
+          ],
+          "abstained_checks": [],
+          "length_violations": 77,
+          "gap_violations": 0,
+          "max_length_error_pct": 58.0,
+          "max_gap_mm": 0.0
+        },
+        "both": {
+          "verdict": "pass",
+          "failed_checks": [],
+          "abstained_checks": [],
+          "length_violations": 0,
+          "gap_violations": 0,
+          "max_length_error_pct": 0.0,
+          "max_gap_mm": 0.0
+        }
+      }
+    },
+    "nod": {
+      "frames": 85,
+      "duration_s": 2.8,
+      "input_sha256": "25f4feac12d18f69cd79f8b7eec5c0aa830fd4551dbe2a5ea89d362b2287516f",
+      "clean_control": {
+        "verdict": "pass",
+        "failed_checks": [],
+        "abstained_checks": [],
+        "length_violations": 0,
+        "gap_violations": 0,
+        "max_length_error_pct": 0.0,
+        "max_gap_mm": 0.0
+      },
+      "clean_with_both": {
+        "verdict": "pass",
+        "max_marker_displacement_mm": 0.0
+      },
+      "variants": {
+        "off": {
+          "verdict": "fail",
+          "failed_checks": [
+            "bone_length",
+            "joint_gap"
+          ],
+          "abstained_checks": [],
+          "length_violations": 53,
+          "gap_violations": 51,
+          "max_length_error_pct": 58.0,
+          "max_gap_mm": 91.787799
+        },
+        "length": {
+          "verdict": "fail",
+          "failed_checks": [
+            "joint_gap"
+          ],
+          "abstained_checks": [],
+          "length_violations": 0,
+          "gap_violations": 51,
+          "max_length_error_pct": 0.0,
+          "max_gap_mm": 91.787799
+        },
+        "reconnect": {
+          "verdict": "fail",
+          "failed_checks": [
+            "bone_length"
+          ],
+          "abstained_checks": [],
+          "length_violations": 53,
+          "gap_violations": 0,
+          "max_length_error_pct": 58.0,
+          "max_gap_mm": 0.0
+        },
+        "both": {
+          "verdict": "pass",
+          "failed_checks": [],
+          "abstained_checks": [],
+          "length_violations": 0,
+          "gap_violations": 0,
+          "max_length_error_pct": 0.0,
+          "max_gap_mm": 0.0
+        }
+      }
+    },
+    "wave": {
+      "frames": 109,
+      "duration_s": 3.6,
+      "input_sha256": "3e2a41b409145b350e0c96b12d17d9d185dab74365f35092b98a42d7ca0fe055",
+      "clean_control": {
+        "verdict": "pass",
+        "failed_checks": [],
+        "abstained_checks": [],
+        "length_violations": 0,
+        "gap_violations": 0,
+        "max_length_error_pct": 0.0,
+        "max_gap_mm": 0.0
+      },
+      "clean_with_both": {
+        "verdict": "pass",
+        "max_marker_displacement_mm": 0.0
+      },
+      "variants": {
+        "off": {
+          "verdict": "fail",
+          "failed_checks": [
+            "bone_length",
+            "joint_gap"
+          ],
+          "abstained_checks": [],
+          "length_violations": 69,
+          "gap_violations": 65,
+          "max_length_error_pct": 58.0,
+          "max_gap_mm": 91.787799
+        },
+        "length": {
+          "verdict": "fail",
+          "failed_checks": [
+            "joint_gap"
+          ],
+          "abstained_checks": [],
+          "length_violations": 0,
+          "gap_violations": 65,
+          "max_length_error_pct": 0.0,
+          "max_gap_mm": 91.787799
+        },
+        "reconnect": {
+          "verdict": "fail",
+          "failed_checks": [
+            "bone_length"
+          ],
+          "abstained_checks": [],
+          "length_violations": 69,
+          "gap_violations": 0,
+          "max_length_error_pct": 58.0,
+          "max_gap_mm": 0.0
+        },
+        "both": {
+          "verdict": "pass",
+          "failed_checks": [],
+          "abstained_checks": [],
+          "length_violations": 0,
+          "gap_violations": 0,
+          "max_length_error_pct": 0.0,
+          "max_gap_mm": 0.0
+        }
+      }
+    }
+  }
+}

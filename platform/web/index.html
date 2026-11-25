@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f6f0">
+  <title>角色动作工作台 · Luis</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./companion.css">
+</head>
+<body>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-import" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+    <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 15V3m-5 5 5-5 5 5M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14m8-14v14" stroke-width="3"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path d="M6 5v14m12 0L8 12l10-7z"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M18 5v14M6 19l10-7L6 5z"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="m16 2 4 4-4 4M4 11V9a3 3 0 0 1 3-3h13M8 22l-4-4 4-4m12-1v2a3 3 0 0 1-3 3H4"/></symbol>
+    <symbol id="i-idle" viewBox="0 0 24 24"><path d="M2 15h4l3-8 4 12 3-9 2 5h4"/></symbol>
+    <symbol id="i-nod" viewBox="0 0 24 24"><path d="M5 4a7 7 0 0 1 12 5v6m-4-4 4 4 4-4M6 19h11"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="m4 15 2-5m3 6 3-9m2 10 2-6m3 5 2-4"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-skeleton" viewBox="0 0 24 24"><path d="m7 16 9-9"/><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="5.5" r="2.5"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 1 7M3 4v6h6"/></symbol>
+  </svg>
+  <header class="mast">
+    <div class="mast-inner">
+      <div class="identity" aria-label="Luis 角色运行平台"><span class="brand-mark" aria-hidden="true"><i></i><i></i></span><span class="wordmark">Luis</span><span class="brand-slash" aria-hidden="true">/</span><span class="product-name">角色运行平台</span></div>
+      <span id="storage-status" class="storage-state" role="status">正在打开工作区</span>
+    </div>
+  </header>
+  <main class="workspace">
+    <div class="page-head">
+      <div><h1>角色动作工作台</h1><p>检查上半身动作与骨架，导出用于动作评测的逐帧数据。</p></div>
+      <div class="file-actions">
+        <input type="file" id="file-input" accept=".json,application/json" hidden>
+        <button type="button" class="button secondary" id="import-file" disabled><svg class="icon"><use href="#i-import"/></svg>导入轨迹</button>
+        <button type="button" class="button primary" id="export-file" disabled><svg class="icon"><use href="#i-export"/></svg>导出骨骼</button>
+      </div>
+    </div>
+    <div class="workspace-grid">
+      <section class="viewer-card card" aria-label="动作视窗和时间线">
+        <header class="section-bar"><h2>3D 视窗</h2><span class="view-source" id="source-kind">合成夹具</span></header>
+        <div class="stage" id="stage" tabindex="0" aria-label="正面角色预览，空格切换播放，方向键前后逐帧">
+          <canvas id="character-canvas" aria-label="上半身角色实时 3D 动画">此浏览器未启用画布。</canvas>
+          <div class="view-caption" aria-hidden="true"><span class="view-target"></span>正面视图</div>
+          <div class="stage-count" aria-hidden="true"><span id="counter">—</span></div>
+          <div class="canvas-error" id="canvas-error" hidden></div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-head"><label for="scrub">播放时间线</label><span><output id="time-current">0.00 s</output><span class="time-separator"> / </span><span id="time-total">—</span></span></div>
+          <input id="scrub" type="range" min="0" max="0" step="1" value="0" aria-label="定位到指定帧" disabled>
+          <div class="transport-row">
+            <div class="transport" role="group" aria-label="播放控制">
+              <button type="button" id="play" class="play-button" aria-label="播放" title="播放或暂停（空格）" disabled><svg class="icon"><use id="play-symbol" href="#i-play"/></svg></button>
+              <button type="button" id="prev" class="tool" aria-label="上一帧" title="上一帧（向左键）" disabled><svg class="icon"><use href="#i-prev"/></svg></button>
+              <button type="button" id="next" class="tool" aria-label="下一帧" title="下一帧（向右键）" disabled><svg class="icon"><use href="#i-next"/></svg></button>
+            </div>
+            <button type="button" id="loop" class="tool text-tool" aria-pressed="false" title="循环播放" disabled><svg class="icon"><use href="#i-loop"/></svg>循环</button>
+          </div>
+        </div>
+      </section>
+      <aside class="inspector card" aria-label="角色与动作设置">
+        <div class="tab-list" role="tablist" aria-label="检查面板">
+          <button id="tab-motion" class="tab" type="button" role="tab" aria-selected="true" aria-controls="motion-panel">动作设置</button>
+          <button id="tab-companion" class="tab" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="companion-panel">角色试用</button>
+        </div>
+        <section class="panel-body" id="motion-panel" role="tabpanel" aria-labelledby="tab-motion">
+          <fieldset class="field-block"><legend>内置动作</legend><div class="clip-list">
+            <button type="button" class="clip" data-action="idle" aria-pressed="false" disabled><svg class="icon"><use href="#i-idle"/></svg><span>待机</span><span class="clip-id">idle</span></button>
+            <button type="button" class="clip" data-action="nod" aria-pressed="false" disabled><svg class="icon"><use href="#i-nod"/></svg><span>点头</span><span class="clip-id">nod</span></button>
+            <button type="button" class="clip" data-action="wave" aria-pressed="false" disabled><svg class="icon"><use href="#i-wave"/></svg><span>挥手</span><span class="clip-id">wave</span></button>
+          </div></fieldset>
+          <div class="field-block inspect-display">
+            <label class="block-name" for="fault">故障对照</label>
+            <div class="select-wrap"><select id="fault" disabled><option value="none">正常动作</option><option value="stretch">前臂拉长</option><option value="detach">前臂脱节</option><option value="jitter">手臂抖动</option></select><svg class="icon"><use href="#i-chevron"/></svg></div>
+            <label class="switch-line" for="skeleton"><span><svg class="icon"><use href="#i-skeleton"/></svg>显示骨架</span><input type="checkbox" id="skeleton" role="switch" disabled><span class="switch-ui" aria-hidden="true"></span></label>
+          </div>
+          <div class="field-block data-block">
+            <h2 class="block-name">轨迹信息</h2>
+            <dl><div><dt>数据来源</dt><dd id="source-name">—</dd></div><div><dt>采样率</dt><dd id="sample-rate">—</dd></div><div><dt>总帧数</dt><dd id="frame-total">—</dd></div></dl>
+            <p class="format-note">导入和导出均使用 <code>luis.motion-trace.v1</code> JSON。</p>
+            <details class="bench-help"><summary>用导出文件运行基准</summary><p>在 Luis 仓库根目录执行，将文件名换为实际下载路径。</p><code>python3 benchmark/motion.py trace.json</code></details>
+          </div>
+          <button type="button" id="reset" class="reset-button" disabled><svg class="icon"><use href="#i-reset"/></svg>恢复默认预览</button>
+        </section>
+        <div class="panel-body" id="companion-panel" role="tabpanel" aria-labelledby="tab-companion" hidden></div>
+      </aside>
+    </div>
+    <div class="notice" role="status" aria-live="polite" id="notice"></div>
+    <noscript><p>请启用 JavaScript 后使用角色预览和轨迹导入。</p></noscript>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

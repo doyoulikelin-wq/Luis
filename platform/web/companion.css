@@ -1,0 +1,13 @@
+.cp-panel {display:grid;gap:.65rem;color:inherit;font:inherit}
+.cp-panel>label,.cp-panel .cp-actions>label {display:grid;gap:.3rem;min-width:0;font-size:.82rem}
+.cp-panel label:has(input[type=checkbox]) {display:flex;flex-direction:row-reverse;justify-content:flex-end;align-items:center;gap:.5rem}
+.cp-panel input:not([type=checkbox]),.cp-panel select {width:100%;min-width:0;box-sizing:border-box;padding:.47rem .55rem;border:1px solid #b9c7c0;border-radius:.35rem;background:white;color:#243d35;font:inherit}
+.cp-panel input[type=color] {width:3.5rem;min-height:2.2rem;padding:.14rem}
+.cp-panel h3 {font-size:.93rem;margin:.65rem 0 0}
+.cp-panel p {margin:0;font-size:.82rem;line-height:1.5}
+.cp-panel .cp-actions{display:flex;align-items:flex-end;gap:.35rem;flex-wrap:wrap}
+.cp-actions button {background:#f3f7f3;color:#1b493c;border:1px solid #aec3b9;border-radius:.4rem;padding:.45rem .55rem;font:inherit;font-size:.8rem;cursor:pointer}
+.cp-actions button:hover {background:#e1eee6}
+.cp-actions label:first-child {flex:1}
+.cp-answer:not(:empty) {padding:.6rem;border-left:2px solid #386552;background:#eef5f0}
+.cp-note {color:#476356}

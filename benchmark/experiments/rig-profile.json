@@ -1,0 +1,97 @@
+{
+  "schema": "luis.diagnostic-rig-profile.v1",
+  "source": "Frozen design specification for the first-party diagnostic rig, in metres. Rest lengths are computed from the design bind offsets, not estimated from any candidate or generated animation.",
+  "scope": "Engineering constraints for a single synthetic rig. No human reference, sensor calibration, or mesh visibility claim.",
+  "fps": 30,
+  "anchors": "independent_segment_markers",
+  "connection_default": "coincident",
+  "bones": [
+    {
+      "id": "spine",
+      "parent": null,
+      "rest_length": 0.215
+    },
+    {
+      "id": "chest",
+      "parent": "spine",
+      "rest_length": 0.242
+    },
+    {
+      "id": "neck",
+      "parent": "chest",
+      "rest_length": 0.077
+    },
+    {
+      "id": "head",
+      "parent": "neck",
+      "rest_length": 0.202
+    },
+    {
+      "id": "leftClavicle",
+      "parent": "chest",
+      "rest_length": 0.168428026171
+    },
+    {
+      "id": "leftUpperArm",
+      "parent": "leftClavicle",
+      "rest_length": 0.213150181797
+    },
+    {
+      "id": "leftLowerArm",
+      "parent": "leftUpperArm",
+      "rest_length": 0.187803088367
+    },
+    {
+      "id": "leftHand",
+      "parent": "leftLowerArm",
+      "rest_length": 0.089089842294
+    },
+    {
+      "id": "rightClavicle",
+      "parent": "chest",
+      "rest_length": 0.168428026171
+    },
+    {
+      "id": "rightUpperArm",
+      "parent": "rightClavicle",
+      "rest_length": 0.213150181797
+    },
+    {
+      "id": "rightLowerArm",
+      "parent": "rightUpperArm",
+      "rest_length": 0.187803088367
+    },
+    {
+      "id": "rightHand",
+      "parent": "rightLowerArm",
+      "rest_length": 0.089089842294
+    }
+  ],
+  "joints": [
+    {
+      "id": "leftElbow",
+      "parent": "leftUpperArm",
+      "child": "leftLowerArm",
+      "angle_deg": [
+        0,
+        160
+      ]
+    },
+    {
+      "id": "rightElbow",
+      "parent": "rightUpperArm",
+      "child": "rightLowerArm",
+      "angle_deg": [
+        0,
+        160
+      ]
+    }
+  ],
+  "limits": {
+    "length_rel": 0.05,
+    "gap_m": 0.01,
+    "angular_speed_deg_s": 720,
+    "endpoint_speed_m_s": 6,
+    "max_frame_dt_s": 0.08
+  }
+}
