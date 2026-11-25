@@ -8,7 +8,7 @@ async function main() {
   const {values} = parseArgs({options:{
     suite:{type:'string'}, case:{type:'string'}, repeat:{type:'string',default:'1'}, out:{type:'string'}, frames:{type:'string'}, list:{type:'boolean'},
   }});
-  const suiteNames=['calibration','entry','gestures','contacts','arbitration','terminals','lifecycle'];
+  const suiteNames=['calibration','entry','gestures','contacts','arbitration','terminals','lifecycle','repairs'];
   const selected=values.suite ? values.suite.split(',') : suiteNames;
   if (selected.some(name=>!suiteNames.includes(name))) throw new Error('Unknown suite');
   const repeat=Number(values.repeat);
@@ -19,8 +19,9 @@ async function main() {
     await module[suite]({run(spec,execute) { cases.push({spec:{suite,oracle:'contract',...spec},execute}); }});
   }
   if (new Set(cases.map(c=>c.spec.id)).size!==cases.length) throw new Error('Duplicate case id');
-  const active=cases.filter(c=>!values.case || c.spec.id===values.case);
-  if (!active.length) throw new Error('No matching cases');
+  const requestedIds=values.case?.split(',');
+  const active=cases.filter(c=>!requestedIds || requestedIds.includes(c.spec.id));
+  if (!active.length || requestedIds?.some(id=>!active.some(c=>c.spec.id===id))) throw new Error('No matching cases for one or more requested IDs');
   if (values.list) { console.table(active.map(c=>c.spec)); process.exit(0); }
 
   const url=new URL(process.env.LUIS_WINDOW_URL || 'http://127.0.0.1:8774/platform/web/window/');

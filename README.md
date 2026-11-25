@@ -33,7 +33,7 @@ python3 benchmark/motion.py platform/demo/nod.luis.json --profile benchmark/expe
 python3 benchmark/ablate.py check full no_recall --plan benchmark/experiments/pipeline-plan.json
 ```
 
-手机角色另有[触摸失活与恢复 benchmark](benchmark/touch/README.md)，可复现多指竞争、系统接管、页面返回和下一次触摸失效。
+手机角色的[触摸失活与恢复 benchmark](benchmark/touch/README.md)覆盖多指竞争、系统接管和页面返回。[缓存返回与拖拽松手的修复消融](benchmark/touch/results/return-release/README.md)保留修复前基线、单项修复与组合复测结果。
 
 ## 当前实验结果
 

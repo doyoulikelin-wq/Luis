@@ -2,7 +2,7 @@
 
 这套测试问三个问题。手指仍在移动时，角色是否还响应新意图？手指松开或被系统打断后，旧动作是否退出？下一根手指能否在当前页面重新取得控制，并让屏幕产生对应变化？三项分别给出证据。一次手势方向判错、需要抬起再按、后续输入也被阻塞，是三种不同严重程度。
 
-[本次实测与逐项结果](results/README.md) · [物理 iPhone 与未来 WKWebView 执行表](device-protocol.md)
+[修复消融及完整复测](results/return-release/README.md) · [修复前封存基线](results/README.md) · [物理 iPhone 与未来 WKWebView 执行表](device-protocol.md)
 
 ## 用例覆盖
 
@@ -64,6 +64,16 @@ python3 benchmark/touch/safari_smoke.py --udid "$SIMULATOR_UDID" --background --
 ```sh
 node benchmark/touch/recovery-ladder.mjs --repeat 2 --out /tmp/luis-recovery.json
 ```
+
+## 单独复现页面返回与松手修复
+
+使用安装好的同一套 Chromium 测试依赖，从仓库根目录运行。脚本从 Git 读取修复前的播放器，并在临时目录内分别构建双关、仅页面返回、仅松手恢复、两项全开四种配置。两项全开直接使用默认播放器文件。每组使用相同的输入、终止通知拦截、判据及恢复探针。测试不会修改本机使用的网页文件。
+
+```sh
+python3 benchmark/touch/ablate_repairs.py --repeat 2 --out /tmp/luis-repair-matrix
+```
+
+默认触摸回归包含修复专项。若需完全重放修复前的 79 项对照，可从 `touch-baseline-dbb9a15` 取出原测试代码，用 LUIS_WINDOW_URL 指向待测播放器。修复前数据和修复后数据分开保存。
 
 ## 用于视频、序列帧及骨骼方案的消融
 

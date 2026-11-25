@@ -7,7 +7,7 @@ async function sampled(h) {
   return h.snapshot();
 }
 
-async function drag(h) {
+export async function drag(h) {
   await h.touch('touchStart', [finger(h, .24)]);
   await h.waitMode('hold');
   await h.touch('touchMove', [finger(h, .78)]);
@@ -29,7 +29,7 @@ async function ownerMovedLeft(h, label) {
     {mode: snap.mode, target: snap.frame?.targetX});
 }
 
-async function discardTerminals(h, id, types) {
+export async function discardTerminals(h, id, types) {
   await h.page.evaluate(({id, types}) => {
     window.__discardedTerminals = [];
     for (const type of types) {
