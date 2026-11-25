@@ -33,6 +33,8 @@ python3 benchmark/motion.py platform/demo/nod.luis.json --profile benchmark/expe
 python3 benchmark/ablate.py check full no_recall --plan benchmark/experiments/pipeline-plan.json
 ```
 
+手机角色另有[触摸失活与恢复 benchmark](benchmark/touch/README.md)，可复现多指竞争、系统接管、页面返回和下一次触摸失效。
+
 ## 当前实验结果
 
 - **骨长约束 × 端点重连。** 给同一个假人的三条动作同时注入伸长和脱节。只修骨长后仍保留 91.79 mm 的连接间隙，只做重连仍保留 58% 的骨长误差。两项都开时，这两个误差才回到浮点精度范围。[实验结果与复现](benchmark/experiments/README.md)

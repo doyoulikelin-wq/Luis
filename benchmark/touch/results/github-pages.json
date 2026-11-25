@@ -1,0 +1,940 @@
+{
+  "schema": "luis.touch-pages.v1",
+  "endpoint": "https://doyoulikelin-wq.github.io/Luis/platform/web/window/?inspect=1",
+  "browser": "158.0.8127.37",
+  "assets": {
+    "index.html": "c5426268d6915d550e3ae614e2f631be41d6e2b971407ff5871683561c902615",
+    "main.js": "3d6d48d81faf79968dd89c2908444bfb179ce2e0c706c76be2509744caac86bd",
+    "interaction.js": "97fe9617660c06d587ef9d20623684868da9d82d215a147c45ae4de979969bad",
+    "actor.js": "670a6a4271b6707c43a013466e64835434a8aca513cab59b9a0e5528d3fbb694",
+    "window.css": "787b14d41a7e07506f6aa323a1c2a54ebf225fa52e5a85e2f911180392cbd9e6",
+    "fonts/noto-sans-sc-ui.woff2": "1f427c8cb5011b7298168ecb4d11f95be54a72e50dbcd7431c0de72a4cc88574",
+    "assets/blue-companion.webp": "30f9442bdbdadbf48c2fb50ce0438d2048c3379327e1e78f6a4e314a46262828"
+  },
+  "runs": [
+    {
+      "testedAt": "2026-11-25T20:16:58.283Z",
+      "row": {
+        "suite": "lifecycle",
+        "oracle": "contract",
+        "id": "navigate-back-after-release",
+        "phase": "lifecycle",
+        "input": "native-touch",
+        "expectation": "先抬手再离开，返回后可按住、拖动、抬起，作为缓存路径的配对对照。",
+        "iteration": 1,
+        "checks": [
+          {
+            "label": "历史返回后旧模式已退出",
+            "ok": true,
+            "evidence": {
+              "persisted": true,
+              "modeOnReturn": "idle"
+            }
+          }
+        ],
+        "evidence": {
+          "restoration": {
+            "path": "bfcache",
+            "signals": [
+              {
+                "type": "pagehide",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 5006
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 5007
+              },
+              {
+                "type": "freeze",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 5007
+              },
+              {
+                "type": "resume",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 5019
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": false,
+                "persisted": null,
+                "time": 5019
+              },
+              {
+                "type": "pageshow",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 5020
+              }
+            ],
+            "releaseAway": false
+          }
+        },
+        "endMode": "idle",
+        "lastInputs": [
+          {
+            "type": "pageshow",
+            "trusted": true,
+            "persisted": false,
+            "hidden": false,
+            "t": 2246
+          },
+          {
+            "type": "pointerdown",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 174,
+            "y": 454,
+            "target": "avatar",
+            "stamp": 4471,
+            "t": 4502
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "stamp": 4868,
+            "t": 4917
+          },
+          {
+            "type": "pointermove",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "stamp": 4868,
+            "t": 4917
+          },
+          {
+            "type": "pointerup",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "stamp": 4921,
+            "t": 4951
+          },
+          {
+            "type": "lostpointercapture",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "stamp": 4921,
+            "t": 4951
+          },
+          {
+            "type": "pagehide",
+            "trusted": true,
+            "persisted": true,
+            "hidden": false,
+            "t": 5006
+          },
+          {
+            "type": "visibilitychange",
+            "trusted": true,
+            "hidden": true,
+            "t": 5006
+          },
+          {
+            "type": "freeze",
+            "trusted": true,
+            "hidden": true,
+            "t": 5007
+          },
+          {
+            "type": "resume",
+            "trusted": true,
+            "hidden": true,
+            "t": 5019
+          },
+          {
+            "type": "visibilitychange",
+            "trusted": true,
+            "hidden": false,
+            "t": 5019
+          },
+          {
+            "type": "pageshow",
+            "trusted": true,
+            "persisted": true,
+            "hidden": false,
+            "t": 5020
+          }
+        ],
+        "observedModes": [
+          {
+            "mode": "idle",
+            "t": 4438,
+            "rafTime": 4400
+          },
+          {
+            "mode": "press",
+            "t": 4517,
+            "rafTime": 4517
+          },
+          {
+            "mode": "hold",
+            "t": 4867,
+            "rafTime": 4867
+          },
+          {
+            "mode": "drag",
+            "t": 4918,
+            "rafTime": 4917
+          },
+          {
+            "mode": "idle",
+            "t": 4968,
+            "rafTime": 4967
+          }
+        ],
+        "pageErrors": [],
+        "probe": {
+          "fromMode": "idle",
+          "accepted": true,
+          "tracks": true,
+          "rendered": "responsive",
+          "released": true,
+          "centered": true,
+          "downToAckMs": 0,
+          "picture": {
+            "leftRight": 24.804,
+            "rightLeft": 24.221,
+            "leftRepeat": 3.631,
+            "sha256": [
+              "23505d3cb519e8f925473ea7a0ee2c8a64bf4760f62430d8664718a2f9e97c93",
+              "da23fdd01f5df14c22fa45d5233bcab42f999c4fb79643c69bdfbc853e7a961d",
+              "a44e2a9ca7657e5a0d4ce9890d7c4d2e2e645c60db992c3ba11b936290450813"
+            ]
+          },
+          "observedDown": true,
+          "observedUp": true,
+          "down": {
+            "id": 3,
+            "primary": true,
+            "target": "avatar",
+            "trusted": true
+          },
+          "eventSpanMs": 1984,
+          "releaseToIdleFrameMs": 15,
+          "outcome": "pass"
+        },
+        "status": "pass"
+      },
+      "pair": 1
+    },
+    {
+      "testedAt": "2026-11-25T20:17:12.298Z",
+      "row": {
+        "suite": "lifecycle",
+        "oracle": "contract",
+        "id": "navigate-back-during-contact",
+        "phase": "lifecycle",
+        "input": "native-touch",
+        "expectation": "离开时未松手，离开后抬起，再返回后可接受新接触。",
+        "iteration": 1,
+        "checks": [
+          {
+            "label": "历史返回后旧模式已退出",
+            "ok": true,
+            "evidence": {
+              "persisted": true,
+              "modeOnReturn": "idle"
+            }
+          }
+        ],
+        "evidence": {
+          "awayRelease": {
+            "requested": true,
+            "domSignals": []
+          },
+          "restoration": {
+            "path": "bfcache",
+            "signals": [
+              {
+                "type": "pagehide",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 4989
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 4989
+              },
+              {
+                "type": "freeze",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 4989
+              },
+              {
+                "type": "resume",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 5010
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": false,
+                "persisted": null,
+                "time": 5010
+              },
+              {
+                "type": "pageshow",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 5011
+              }
+            ],
+            "releaseAway": true
+          }
+        },
+        "endMode": "idle",
+        "lastInputs": [
+          {
+            "type": "pageshow",
+            "trusted": true,
+            "persisted": false,
+            "hidden": false,
+            "t": 2575
+          },
+          {
+            "type": "pointerdown",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 174,
+            "y": 454,
+            "target": "avatar",
+            "stamp": 4491,
+            "t": 4524
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "stamp": 4889,
+            "t": 4939
+          },
+          {
+            "type": "pointermove",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "stamp": 4889,
+            "t": 4939
+          },
+          {
+            "type": "pagehide",
+            "trusted": true,
+            "persisted": true,
+            "hidden": false,
+            "t": 4989
+          },
+          {
+            "type": "visibilitychange",
+            "trusted": true,
+            "hidden": true,
+            "t": 4989
+          },
+          {
+            "type": "freeze",
+            "trusted": true,
+            "hidden": true,
+            "t": 4989
+          },
+          {
+            "type": "resume",
+            "trusted": true,
+            "hidden": true,
+            "t": 5010
+          },
+          {
+            "type": "visibilitychange",
+            "trusted": true,
+            "hidden": false,
+            "t": 5010
+          },
+          {
+            "type": "pageshow",
+            "trusted": true,
+            "persisted": true,
+            "hidden": false,
+            "t": 5011
+          }
+        ],
+        "observedModes": [
+          {
+            "mode": "idle",
+            "t": 4465,
+            "rafTime": 4438
+          },
+          {
+            "mode": "press",
+            "t": 4539,
+            "rafTime": 4538
+          },
+          {
+            "mode": "hold",
+            "t": 4889,
+            "rafTime": 4888
+          },
+          {
+            "mode": "drag",
+            "t": 4939,
+            "rafTime": 4938
+          },
+          {
+            "mode": "idle",
+            "t": 5011,
+            "rafTime": 5004
+          }
+        ],
+        "pageErrors": [],
+        "probe": {
+          "fromMode": "idle",
+          "accepted": false,
+          "tracks": false,
+          "rendered": "unverified",
+          "released": true,
+          "centered": true,
+          "observedDown": true,
+          "observedUp": true,
+          "down": {
+            "id": 3,
+            "primary": false,
+            "target": "avatar",
+            "trusted": true
+          },
+          "eventSpanMs": 1267,
+          "outcome": "control-failed"
+        },
+        "status": "fail"
+      },
+      "pair": 1
+    },
+    {
+      "pair": 2,
+      "testedAt": "2026-11-25T20:23:23.623Z",
+      "row": {
+        "suite": "lifecycle",
+        "oracle": "contract",
+        "id": "navigate-back-after-release",
+        "phase": "lifecycle",
+        "input": "native-touch",
+        "expectation": "先抬手再离开，返回后可按住、拖动、抬起，作为缓存路径的配对对照。",
+        "iteration": 1,
+        "checks": [
+          {
+            "label": "历史返回后旧模式已退出",
+            "ok": true,
+            "evidence": {
+              "persisted": true,
+              "modeOnReturn": "idle"
+            }
+          }
+        ],
+        "evidence": {
+          "restoration": {
+            "path": "bfcache",
+            "signals": [
+              {
+                "type": "pagehide",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 6298
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 6299
+              },
+              {
+                "type": "freeze",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 6299
+              },
+              {
+                "type": "resume",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 6319
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": false,
+                "persisted": null,
+                "time": 6319
+              },
+              {
+                "type": "pageshow",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 6319
+              }
+            ],
+            "releaseAway": false
+          }
+        },
+        "endMode": "idle",
+        "lastInputs": [
+          {
+            "type": "pageshow",
+            "trusted": true,
+            "persisted": false,
+            "hidden": false,
+            "t": 2799
+          },
+          {
+            "type": "pointerdown",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 174,
+            "y": 454,
+            "target": "avatar",
+            "onSurface": true,
+            "stamp": 5722,
+            "t": 5769
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "onSurface": true,
+            "stamp": 6133,
+            "t": 6184
+          },
+          {
+            "type": "pointermove",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "onSurface": true,
+            "stamp": 6133,
+            "t": 6184
+          },
+          {
+            "type": "pointerup",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "onSurface": true,
+            "stamp": 6188,
+            "t": 6235
+          },
+          {
+            "type": "lostpointercapture",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "onSurface": true,
+            "stamp": 6188,
+            "t": 6235
+          },
+          {
+            "type": "pagehide",
+            "trusted": true,
+            "persisted": true,
+            "hidden": false,
+            "t": 6298
+          },
+          {
+            "type": "visibilitychange",
+            "trusted": true,
+            "hidden": true,
+            "t": 6299
+          },
+          {
+            "type": "freeze",
+            "trusted": true,
+            "hidden": true,
+            "t": 6299
+          },
+          {
+            "type": "resume",
+            "trusted": true,
+            "hidden": true,
+            "t": 6319
+          },
+          {
+            "type": "visibilitychange",
+            "trusted": true,
+            "hidden": false,
+            "t": 6319
+          },
+          {
+            "type": "pageshow",
+            "trusted": true,
+            "persisted": true,
+            "hidden": false,
+            "t": 6319
+          }
+        ],
+        "observedModes": [
+          {
+            "mode": "idle",
+            "t": 5699,
+            "rafTime": 5650
+          },
+          {
+            "mode": "press",
+            "t": 5784,
+            "rafTime": 5783
+          },
+          {
+            "mode": "hold",
+            "t": 6134,
+            "rafTime": 6133
+          },
+          {
+            "mode": "drag",
+            "t": 6184,
+            "rafTime": 6183
+          },
+          {
+            "mode": "idle",
+            "t": 6251,
+            "rafTime": 6250
+          }
+        ],
+        "pageErrors": [],
+        "probe": {
+          "fromMode": "idle",
+          "accepted": true,
+          "tracks": true,
+          "rendered": "responsive",
+          "released": true,
+          "centered": true,
+          "aim": {
+            "x": 83,
+            "y": 460.088125,
+            "hit": "avatar",
+            "onSurface": true,
+            "scale": 1
+          },
+          "downToAckMs": 0,
+          "picture": {
+            "leftRight": 24.802,
+            "rightLeft": 24.22,
+            "leftRepeat": 3.632,
+            "sha256": [
+              "d2b782e43d22ec328d804d18c02165684a7c986b50ae8142f314e523b2601a1b",
+              "2374f8a3f3251f79a7bf8c80e971167d4486ea37c1e39d907328f2d1d96b45c3",
+              "41d296e369f8a98a3a9b9edb221e0101cdb3dbf6d66630144359a4c42832015f"
+            ]
+          },
+          "observedDown": true,
+          "observedUp": true,
+          "down": {
+            "id": 3,
+            "primary": true,
+            "target": "avatar",
+            "trusted": true,
+            "x": 83,
+            "y": 460,
+            "onSurface": true
+          },
+          "eventSpanMs": 1831,
+          "releaseToIdleFrameMs": 16,
+          "outcome": "pass"
+        },
+        "status": "pass"
+      }
+    },
+    {
+      "pair": 2,
+      "testedAt": "2026-11-25T20:23:38.849Z",
+      "row": {
+        "suite": "lifecycle",
+        "oracle": "contract",
+        "id": "navigate-back-during-contact",
+        "phase": "lifecycle",
+        "input": "native-touch",
+        "expectation": "离开时未松手，离开后抬起，再返回后可接受新接触。",
+        "iteration": 1,
+        "checks": [
+          {
+            "label": "历史返回后旧模式已退出",
+            "ok": true,
+            "evidence": {
+              "persisted": true,
+              "modeOnReturn": "idle"
+            }
+          }
+        ],
+        "evidence": {
+          "awayRelease": {
+            "requested": true,
+            "domSignals": []
+          },
+          "restoration": {
+            "path": "bfcache",
+            "signals": [
+              {
+                "type": "pagehide",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 4888
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 4888
+              },
+              {
+                "type": "freeze",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 4888
+              },
+              {
+                "type": "resume",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 4917
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": false,
+                "persisted": null,
+                "time": 4917
+              },
+              {
+                "type": "pageshow",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 4917
+              }
+            ],
+            "releaseAway": true
+          }
+        },
+        "endMode": "idle",
+        "lastInputs": [
+          {
+            "type": "pageshow",
+            "trusted": true,
+            "persisted": false,
+            "hidden": false,
+            "t": 2738
+          },
+          {
+            "type": "pointerdown",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 174,
+            "y": 454,
+            "target": "avatar",
+            "onSurface": true,
+            "stamp": 4388,
+            "t": 4414
+          },
+          {
+            "type": "gotpointercapture",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "onSurface": true,
+            "stamp": 4781,
+            "t": 4828
+          },
+          {
+            "type": "pointermove",
+            "id": 2,
+            "primary": true,
+            "pointerType": "touch",
+            "trusted": true,
+            "x": 300,
+            "y": 457,
+            "target": "window-surface",
+            "onSurface": true,
+            "stamp": 4781,
+            "t": 4828
+          },
+          {
+            "type": "pagehide",
+            "trusted": true,
+            "persisted": true,
+            "hidden": false,
+            "t": 4888
+          },
+          {
+            "type": "visibilitychange",
+            "trusted": true,
+            "hidden": true,
+            "t": 4888
+          },
+          {
+            "type": "freeze",
+            "trusted": true,
+            "hidden": true,
+            "t": 4888
+          },
+          {
+            "type": "resume",
+            "trusted": true,
+            "hidden": true,
+            "t": 4917
+          },
+          {
+            "type": "visibilitychange",
+            "trusted": true,
+            "hidden": false,
+            "t": 4917
+          },
+          {
+            "type": "pageshow",
+            "trusted": true,
+            "persisted": true,
+            "hidden": false,
+            "t": 4917
+          }
+        ],
+        "observedModes": [
+          {
+            "mode": "idle",
+            "t": 4352,
+            "rafTime": 4328
+          },
+          {
+            "mode": "press",
+            "t": 4429,
+            "rafTime": 4428
+          },
+          {
+            "mode": "hold",
+            "t": 4779,
+            "rafTime": 4778
+          },
+          {
+            "mode": "drag",
+            "t": 4829,
+            "rafTime": 4828
+          },
+          {
+            "mode": "idle",
+            "t": 4917,
+            "rafTime": 4911
+          }
+        ],
+        "pageErrors": [],
+        "probe": {
+          "fromMode": "idle",
+          "accepted": false,
+          "tracks": false,
+          "rendered": "unverified",
+          "released": true,
+          "centered": true,
+          "aim": {
+            "x": 83,
+            "y": 460.088125,
+            "hit": "avatar",
+            "onSurface": true,
+            "scale": 1
+          },
+          "observedDown": true,
+          "observedUp": true,
+          "down": {
+            "id": 3,
+            "primary": false,
+            "target": "avatar",
+            "trusted": true,
+            "x": 83,
+            "y": 460,
+            "onSurface": true
+          },
+          "eventSpanMs": 1267,
+          "outcome": "control-failed"
+        },
+        "status": "fail"
+      }
+    }
+  ]
+}

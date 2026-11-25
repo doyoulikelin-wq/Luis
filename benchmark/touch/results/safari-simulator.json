@@ -1,0 +1,394 @@
+{
+  "schema": "luis.ios-simulator-touch.v1",
+  "url": "http://127.0.0.1:8774/platform/web/window/?inspect=1",
+  "capabilities": {
+    "browserName": "Safari",
+    "browserVersion": "26.3",
+    "platformName": "iOS",
+    "safari:useSimulator": true,
+    "safari:deviceName": "iPhone 17 Pro",
+    "safari:platformVersion": "26.3.1",
+    "safari:platformBuildVersion": "23D8133"
+  },
+  "results": [
+    {
+      "id": "cancel-press",
+      "input": "application PointerEvent replay",
+      "beforeAndAfterCancel": [
+        "press",
+        "idle"
+      ],
+      "probe": {
+        "left": {
+          "mode": "hold",
+          "pixel": [
+            70.86486486486487,
+            129.0212765957447
+          ],
+          "target": -0.7727272727272727
+        },
+        "delta": [
+          3.1855553032023636,
+          3.5754975978036896
+        ],
+        "inputTrusted": false,
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.05042016806723,
+            132.59677419354838
+          ],
+          "target": 0.7954545454545454
+        },
+        "idle": true,
+        "centered": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "cancel-hold",
+      "input": "application PointerEvent replay",
+      "beforeAndAfterCancel": [
+        "hold",
+        "idle"
+      ],
+      "probe": {
+        "left": {
+          "mode": "hold",
+          "pixel": [
+            70.85840707964601,
+            128.96478873239437
+          ],
+          "target": -0.7727272727272727
+        },
+        "delta": [
+          3.19201308842122,
+          3.628707202564982
+        ],
+        "inputTrusted": false,
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.05042016806723,
+            132.59349593495935
+          ],
+          "target": 0.7954545454545454
+        },
+        "idle": true,
+        "centered": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "cancel-drag",
+      "input": "application PointerEvent replay",
+      "beforeAndAfterCancel": [
+        "drag",
+        "idle"
+      ],
+      "probe": {
+        "left": {
+          "mode": "hold",
+          "pixel": [
+            70.85964912280701,
+            128.95774647887325
+          ],
+          "target": -0.7727272727272727
+        },
+        "delta": [
+          3.1907710452602203,
+          3.6390277146751373
+        ],
+        "inputTrusted": false,
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.05042016806723,
+            132.59677419354838
+          ],
+          "target": 0.7954545454545454
+        },
+        "idle": true,
+        "centered": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "lost-capture",
+      "input": "application PointerEvent replay",
+      "afterCaptureLoss": "idle",
+      "probe": {
+        "left": {
+          "mode": "hold",
+          "pixel": [
+            71,
+            129.0212765957447
+          ],
+          "target": -0.7727272727272727
+        },
+        "delta": [
+          3.050420168067234,
+          3.5754975978036896
+        ],
+        "inputTrusted": false,
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.05042016806723,
+            132.59677419354838
+          ],
+          "target": 0.7954545454545454
+        },
+        "idle": true,
+        "centered": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "missing-terminals",
+      "input": "fault-injected missing application terminals",
+      "fault": "omit up, cancel and capture loss before fresh primary down",
+      "staleMode": "drag",
+      "probe": {
+        "left": {
+          "mode": "drag",
+          "pixel": [
+            74.1900826446281,
+            132.3464566929134
+          ],
+          "target": 0.6590909090909092
+        },
+        "delta": [
+          -0.03174931129477443,
+          0.08211473565802407
+        ],
+        "inputTrusted": false,
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.15833333333333,
+            132.42857142857142
+          ],
+          "target": 0.6590909090909092
+        },
+        "idle": false,
+        "centered": false
+      },
+      "status": "fail"
+    },
+    {
+      "id": "actual-reload",
+      "input": "injected drag and actual Safari refresh",
+      "sameDocument": false,
+      "mode": "idle",
+      "probe": {
+        "left": {
+          "mode": "hold",
+          "pixel": [
+            70.90090090090091,
+            129.0212765957447
+          ],
+          "target": -0.7727272727272727
+        },
+        "delta": [
+          3.149519267166326,
+          3.5754975978036896
+        ],
+        "inputTrusted": false,
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.05042016806723,
+            132.59677419354838
+          ],
+          "target": 0.7954545454545454
+        },
+        "idle": true,
+        "centered": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "actual-history-back",
+      "input": "injected drag and actual Safari navigation/back",
+      "mode": "idle",
+      "persisted": true,
+      "events": [
+        {
+          "type": "pagehide",
+          "hidden": false,
+          "persisted": true
+        },
+        {
+          "type": "visibilitychange",
+          "hidden": true,
+          "persisted": false
+        },
+        {
+          "type": "visibilitychange",
+          "hidden": false,
+          "persisted": false
+        },
+        {
+          "type": "pageshow",
+          "hidden": false,
+          "persisted": true
+        }
+      ],
+      "probe": {
+        "left": {
+          "mode": "hold",
+          "pixel": [
+            70.85840707964601,
+            128.95070422535213
+          ],
+          "target": -0.7727272727272727
+        },
+        "delta": [
+          3.19201308842122,
+          3.646069968196258
+        ],
+        "inputTrusted": false,
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.05042016806723,
+            132.59677419354838
+          ],
+          "target": 0.7954545454545454
+        },
+        "idle": true,
+        "centered": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "actual-tab-switch",
+      "input": "injected drag and real Safari tab switch",
+      "lifecycle": [
+        {
+          "type": "blur",
+          "hidden": false,
+          "persisted": false
+        },
+        {
+          "type": "visibilitychange",
+          "hidden": true,
+          "persisted": false
+        },
+        {
+          "type": "visibilitychange",
+          "hidden": false,
+          "persisted": false
+        },
+        {
+          "type": "focus",
+          "hidden": false,
+          "persisted": false
+        }
+      ],
+      "mode": "idle",
+      "probe": {
+        "left": {
+          "mode": "hold",
+          "pixel": [
+            70.80733944954129,
+            129.0921985815603
+          ],
+          "target": -0.7727272727272727
+        },
+        "delta": [
+          3.2430807185259454,
+          3.5012973533990532
+        ],
+        "inputTrusted": false,
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.05042016806723,
+            132.59349593495935
+          ],
+          "target": 0.7954545454545454
+        },
+        "idle": true,
+        "centered": true
+      },
+      "status": "pass"
+    },
+    {
+      "id": "actual-app-switch",
+      "input": "local instrumented tab, injected drag and actual Simulator Settings/Safari switch",
+      "source": "platform/web/window",
+      "entry": "checkout HTML with one probe script appended",
+      "assetHashes": {
+        "main.js": "3d6d48d81faf79968dd89c2908444bfb179ce2e0c706c76be2509744caac86bd",
+        "interaction.js": "97fe9617660c06d587ef9d20623684868da9d82d215a147c45ae4de979969bad",
+        "actor.js": "670a6a4271b6707c43a013466e64835434a8aca513cab59b9a0e5528d3fbb694"
+      },
+      "mode": "idle",
+      "lifecycle": [
+        {
+          "type": "blur",
+          "hidden": true,
+          "persisted": false
+        },
+        {
+          "type": "visibilitychange",
+          "hidden": true,
+          "persisted": false
+        },
+        {
+          "type": "focus",
+          "hidden": false,
+          "persisted": false
+        },
+        {
+          "type": "focus",
+          "hidden": false,
+          "persisted": false
+        },
+        {
+          "type": "visibilitychange",
+          "hidden": false,
+          "persisted": false
+        }
+      ],
+      "probe": {
+        "left": {
+          "mode": "hold",
+          "pixel": [
+            70.95575221238938,
+            129.18840579710144
+          ],
+          "target": -0.7727272727272727
+        },
+        "right": {
+          "mode": "drag",
+          "pixel": [
+            74.05042016806723,
+            132.59677419354838
+          ],
+          "target": 0.7954545454545454
+        },
+        "delta": [
+          3.094667955677849,
+          3.408368396446946
+        ],
+        "idle": true,
+        "centered": true,
+        "inputTrusted": false
+      },
+      "status": "pass"
+    }
+  ],
+  "nativeDriverCalibration": {
+    "events": [
+      {
+        "type": "pointerdown",
+        "trusted": true,
+        "pointerType": "touch"
+      }
+    ],
+    "complete": false
+  }
+}

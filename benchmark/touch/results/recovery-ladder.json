@@ -1,0 +1,879 @@
+{
+  "schema": "luis.touch-recovery-ladder.v1",
+  "testedAt": "2026-11-25T20:18:39.353Z",
+  "browser": "158.0.8127.37",
+  "url": "http://127.0.0.1:8774/platform/web/window/?inspect=1",
+  "profile": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 1,
+    "modeBudgetMs": 900,
+    "terminalBudgetMs": 1100,
+    "returnBudgetMs": 1500,
+    "visualColumns": 80,
+    "visualRows": 64,
+    "minContrast": 0.8,
+    "repeatNoiseFactor": 1.6
+  },
+  "repeat": 2,
+  "results": [
+    {
+      "id": "missing-up-and-capture-loss",
+      "input": "mixed",
+      "iteration": 1,
+      "steps": [
+        {
+          "stage": "fresh-contact-1",
+          "intervention": {
+            "verified": true
+          },
+          "probe": {
+            "fromMode": "drag",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": false,
+            "centered": false,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 4,
+              "primary": true,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1284,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "fresh-contact-2",
+          "intervention": {
+            "verified": true
+          },
+          "probe": {
+            "fromMode": "drag",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": false,
+            "centered": false,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 5,
+              "primary": true,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1283,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "tab-blur-return",
+          "intervention": {
+            "verified": true,
+            "before": {
+              "origin": 1795637919512,
+              "at": 8576,
+              "focused": true,
+              "visible": true,
+              "mode": "drag",
+              "targetX": 0.6363636363636365
+            },
+            "prepared": {
+              "origin": 1795637919512,
+              "at": 8580,
+              "focused": true,
+              "visible": true,
+              "mode": "drag",
+              "targetX": 0.6363636363636365
+            },
+            "away": {
+              "origin": 1795637919512,
+              "at": 8635,
+              "focused": false,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "after": {
+              "origin": 1795637919512,
+              "at": 8651,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "beforeSwitch": 0,
+            "signals": [
+              {
+                "type": "blur",
+                "trusted": true,
+                "at": 8597.600000023842,
+                "hidden": false
+              },
+              {
+                "type": "focus",
+                "trusted": true,
+                "at": 8643.299999952316,
+                "hidden": false
+              }
+            ]
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": true,
+            "tracks": true,
+            "rendered": "responsive",
+            "released": true,
+            "centered": true,
+            "downToAckMs": 0,
+            "picture": {
+              "leftRight": 25.17,
+              "rightLeft": 24.536,
+              "leftRepeat": 4.006,
+              "sha256": [
+                "3a627207f854d9eb2266c1e489deca7ab1ab013845efba135dc56a9a75dc0275",
+                "b9e6cf202aaaab64ac6e49cb960a0490eef4256ac601af49a506c23deecfe42c",
+                "241632172395d400af7b68e62dfebad75548902900ac8a0d46ae0dde9b8e60fc"
+              ]
+            },
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 6,
+              "primary": true,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1867,
+            "releaseToIdleFrameMs": 16,
+            "outcome": "pass"
+          }
+        }
+      ],
+      "fixture": {
+        "checks": [
+          {
+            "label": "A fresh contact can take ownership after the previous release signals were suppressed.",
+            "ok": false,
+            "evidence": {
+              "previousPointer": 2,
+              "nextPointer": 3,
+              "mode": "drag",
+              "target": 0.6363636363636365
+            }
+          }
+        ],
+        "notes": {
+          "fault": [
+            {
+              "type": "pointerup",
+              "trusted": true
+            },
+            {
+              "type": "lostpointercapture",
+              "trusted": true
+            }
+          ]
+        }
+      },
+      "seed": {
+        "origin": 1795637919512,
+        "at": 737,
+        "focused": true,
+        "visible": true,
+        "mode": "drag",
+        "targetX": 0.6363636363636365
+      },
+      "firstVerifiedRecovery": "tab-blur-return",
+      "status": "recovered"
+    },
+    {
+      "id": "navigate-back-during-contact",
+      "input": "native-touch",
+      "iteration": 1,
+      "steps": [
+        {
+          "stage": "fresh-contact-1",
+          "intervention": {
+            "verified": true
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": true,
+            "centered": true,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 3,
+              "primary": false,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1267,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "fresh-contact-2",
+          "intervention": {
+            "verified": true
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": true,
+            "centered": true,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 4,
+              "primary": false,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1267,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "tab-blur-return",
+          "intervention": {
+            "verified": true,
+            "before": {
+              "origin": 1795637930657,
+              "at": 3232,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "prepared": {
+              "origin": 1795637930657,
+              "at": 3235,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "away": {
+              "origin": 1795637930657,
+              "at": 3291,
+              "focused": false,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "after": {
+              "origin": 1795637930657,
+              "at": 3305,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "beforeSwitch": 0,
+            "signals": [
+              {
+                "type": "blur",
+                "trusted": true,
+                "at": 3251.399999976158,
+                "hidden": false
+              },
+              {
+                "type": "focus",
+                "trusted": true,
+                "at": 3294,
+                "hidden": false
+              }
+            ]
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": true,
+            "centered": true,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 5,
+              "primary": false,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1265,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "reload",
+          "intervention": {
+            "verified": true,
+            "before": {
+              "origin": 1795637930657,
+              "at": 4598,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "after": {
+              "origin": 1795637935257.2,
+              "at": 47,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            }
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": true,
+            "tracks": true,
+            "rendered": "responsive",
+            "released": true,
+            "centered": true,
+            "downToAckMs": 0,
+            "picture": {
+              "leftRight": 24.798,
+              "rightLeft": 24.221,
+              "leftRepeat": 3.64,
+              "sha256": [
+                "9812d98b422545888bb04a834e102cd74faeeb5a9924258ab6191de24cc4a449",
+                "6e09d348a35f451f02881db027b79953f42d448c7a4088aad8769f29a826a75c",
+                "1f6b9232026cbffb610b3fef906a31ba09a37405edffe7ab241bec9a5322c798"
+              ]
+            },
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 2,
+              "primary": true,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1767,
+            "releaseToIdleFrameMs": 17,
+            "outcome": "pass"
+          }
+        }
+      ],
+      "fixture": {
+        "checks": [
+          {
+            "label": "历史返回后旧模式已退出",
+            "ok": true,
+            "evidence": {
+              "persisted": true,
+              "modeOnReturn": "idle"
+            }
+          }
+        ],
+        "notes": {
+          "awayRelease": {
+            "requested": true,
+            "domSignals": []
+          },
+          "restoration": {
+            "path": "bfcache",
+            "signals": [
+              {
+                "type": "pagehide",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 601
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 602
+              },
+              {
+                "type": "freeze",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 602
+              },
+              {
+                "type": "resume",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 632
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": false,
+                "persisted": null,
+                "time": 632
+              },
+              {
+                "type": "pageshow",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 632
+              }
+            ],
+            "releaseAway": true
+          }
+        }
+      },
+      "seed": {
+        "origin": 1795637930657,
+        "at": 661,
+        "focused": true,
+        "visible": true,
+        "mode": "idle",
+        "targetX": 0
+      },
+      "firstVerifiedRecovery": "reload",
+      "status": "recovered"
+    },
+    {
+      "id": "missing-up-and-capture-loss",
+      "input": "mixed",
+      "iteration": 2,
+      "steps": [
+        {
+          "stage": "fresh-contact-1",
+          "intervention": {
+            "verified": true
+          },
+          "probe": {
+            "fromMode": "drag",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": false,
+            "centered": false,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 4,
+              "primary": true,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1284,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "fresh-contact-2",
+          "intervention": {
+            "verified": true
+          },
+          "probe": {
+            "fromMode": "drag",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": false,
+            "centered": false,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 5,
+              "primary": true,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1284,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "tab-blur-return",
+          "intervention": {
+            "verified": true,
+            "before": {
+              "origin": 1795637937716.7,
+              "at": 8547,
+              "focused": true,
+              "visible": true,
+              "mode": "drag",
+              "targetX": 0.6363636363636365
+            },
+            "prepared": {
+              "origin": 1795637937716.7,
+              "at": 8557,
+              "focused": true,
+              "visible": true,
+              "mode": "drag",
+              "targetX": 0.6363636363636365
+            },
+            "away": {
+              "origin": 1795637937716.7,
+              "at": 8615,
+              "focused": false,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "after": {
+              "origin": 1795637937716.7,
+              "at": 8632,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "beforeSwitch": 0,
+            "signals": [
+              {
+                "type": "blur",
+                "trusted": true,
+                "at": 8572,
+                "hidden": false
+              },
+              {
+                "type": "focus",
+                "trusted": true,
+                "at": 8620.299999952316,
+                "hidden": false
+              }
+            ]
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": true,
+            "tracks": true,
+            "rendered": "responsive",
+            "released": true,
+            "centered": true,
+            "downToAckMs": 0,
+            "picture": {
+              "leftRight": 24.789,
+              "rightLeft": 24.221,
+              "leftRepeat": 3.6,
+              "sha256": [
+                "16e3af85ad45ac585a20764d387f5656c1da68c67e5e502e15348d286c677527",
+                "00bb7d2a49464c1dc39b480b281d2c06d5253e15021a55d258260a245679ea7b",
+                "db792cd8df8f0b699c97c3f79a4c75f50c605436a111d31ed4ccebdc1d179f2b"
+              ]
+            },
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 6,
+              "primary": true,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1749,
+            "releaseToIdleFrameMs": 16,
+            "outcome": "pass"
+          }
+        }
+      ],
+      "fixture": {
+        "checks": [
+          {
+            "label": "A fresh contact can take ownership after the previous release signals were suppressed.",
+            "ok": false,
+            "evidence": {
+              "previousPointer": 2,
+              "nextPointer": 3,
+              "mode": "drag",
+              "target": 0.6363636363636365
+            }
+          }
+        ],
+        "notes": {
+          "fault": [
+            {
+              "type": "pointerup",
+              "trusted": true
+            },
+            {
+              "type": "lostpointercapture",
+              "trusted": true
+            }
+          ]
+        }
+      },
+      "seed": {
+        "origin": 1795637937716.7,
+        "at": 710,
+        "focused": true,
+        "visible": true,
+        "mode": "drag",
+        "targetX": 0.6363636363636365
+      },
+      "firstVerifiedRecovery": "tab-blur-return",
+      "status": "recovered"
+    },
+    {
+      "id": "navigate-back-during-contact",
+      "input": "native-touch",
+      "iteration": 2,
+      "steps": [
+        {
+          "stage": "fresh-contact-1",
+          "intervention": {
+            "verified": true
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": true,
+            "centered": true,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 3,
+              "primary": false,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1267,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "fresh-contact-2",
+          "intervention": {
+            "verified": true
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": true,
+            "centered": true,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 4,
+              "primary": false,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1268,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "tab-blur-return",
+          "intervention": {
+            "verified": true,
+            "before": {
+              "origin": 1795637948713,
+              "at": 3175,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "prepared": {
+              "origin": 1795637948713,
+              "at": 3178,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "away": {
+              "origin": 1795637948713,
+              "at": 3239,
+              "focused": false,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "after": {
+              "origin": 1795637948713,
+              "at": 3256,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "beforeSwitch": 0,
+            "signals": [
+              {
+                "type": "blur",
+                "trusted": true,
+                "at": 3195.7999999523163,
+                "hidden": false
+              },
+              {
+                "type": "focus",
+                "trusted": true,
+                "at": 3244.5,
+                "hidden": false
+              }
+            ]
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": false,
+            "tracks": false,
+            "rendered": "unverified",
+            "released": true,
+            "centered": true,
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 5,
+              "primary": false,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1266,
+            "outcome": "control-failed"
+          }
+        },
+        {
+          "stage": "reload",
+          "intervention": {
+            "verified": true,
+            "before": {
+              "origin": 1795637948713,
+              "at": 4542,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            },
+            "after": {
+              "origin": 1795637953257.5,
+              "at": 44,
+              "focused": true,
+              "visible": true,
+              "mode": "idle",
+              "targetX": 0
+            }
+          },
+          "probe": {
+            "fromMode": "idle",
+            "accepted": true,
+            "tracks": true,
+            "rendered": "responsive",
+            "released": true,
+            "centered": true,
+            "downToAckMs": 0,
+            "picture": {
+              "leftRight": 24.789,
+              "rightLeft": 24.143,
+              "leftRepeat": 4.034,
+              "sha256": [
+                "8fd5b027f4706698923fb44c5f8b562fc750bb908c29b53e27742d837dd876cb",
+                "dddbc7dadc79e546b85fa1fc0775da1d9aafa12d43b787009d884017532d47a1",
+                "e7a2e72f393b56fa2ffb9b1c5c124db7904074f5407c4069a5ac8b892ada2f04"
+              ]
+            },
+            "observedDown": true,
+            "observedUp": true,
+            "down": {
+              "id": 2,
+              "primary": true,
+              "target": "avatar",
+              "trusted": true
+            },
+            "eventSpanMs": 1734,
+            "releaseToIdleFrameMs": 16,
+            "outcome": "pass"
+          }
+        }
+      ],
+      "fixture": {
+        "checks": [
+          {
+            "label": "历史返回后旧模式已退出",
+            "ok": true,
+            "evidence": {
+              "persisted": true,
+              "modeOnReturn": "idle"
+            }
+          }
+        ],
+        "notes": {
+          "awayRelease": {
+            "requested": true,
+            "domSignals": []
+          },
+          "restoration": {
+            "path": "bfcache",
+            "signals": [
+              {
+                "type": "pagehide",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 551
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 551
+              },
+              {
+                "type": "freeze",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 551
+              },
+              {
+                "type": "resume",
+                "trusted": true,
+                "hidden": true,
+                "persisted": null,
+                "time": 574
+              },
+              {
+                "type": "visibilitychange",
+                "trusted": true,
+                "hidden": false,
+                "persisted": null,
+                "time": 574
+              },
+              {
+                "type": "pageshow",
+                "trusted": true,
+                "hidden": false,
+                "persisted": true,
+                "time": 574
+              }
+            ],
+            "releaseAway": true
+          }
+        }
+      },
+      "seed": {
+        "origin": 1795637948713,
+        "at": 600,
+        "focused": true,
+        "visible": true,
+        "mode": "idle",
+        "targetX": 0
+      },
+      "firstVerifiedRecovery": "reload",
+      "status": "recovered"
+    }
+  ]
+}
