@@ -1,0 +1,90 @@
+/* Local Noto Sans SC subset for this preview's Chinese text (fonts/OFL.txt). */
+@font-face {
+  font-family: "Luis SC";
+  src: url("./fonts/noto-sans-sc-ui.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+3000-303F, U+4E00-9FFF, U+FF00-FFEF;
+}
+:root {
+  font-family: "Luis SC", "DM Sans", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #29292e;
+  background: #f6f2ec;
+  -webkit-text-size-adjust: 100%;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible { outline: 2px solid #64559f; outline-offset: 4px; }
+[hidden] { display: none !important; }
+.mast {
+  max-width: 1100px;
+  height: calc(76px + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) max(24px, env(safe-area-inset-right)) 0 max(24px, env(safe-area-inset-left));
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: inline-flex; align-items: center; gap: 9px; font-size: 24px; font-weight: 690; letter-spacing: -1.5px; }
+.brand-mark { width: 24px; height: 21px; border: 2px solid currentColor; border-radius: 7px; position: relative; }
+.brand-mark::after { content: ""; position: absolute; left: 2px; right: 2px; bottom: 3px; border-bottom: 2px solid currentColor; }
+.help { min-height: 44px; border: 0; background: transparent; display: inline-flex; gap: 8px; align-items: center; font-size: 13px; }
+.help span { display: grid; place-items: center; border: 1px solid #77716d; border-radius: 50%; width: 17px; height: 17px; font-size: 11px; font-weight: 650; }
+main {
+  min-height: calc(94vh - 76px);
+  min-height: calc(94svh - 76px - env(safe-area-inset-top));
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 24px max(20px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+}
+.preview { width: min(100%, 440px); text-align: center; }
+h1 { margin: 0; font-size: clamp(27px, 4.9vw, 36px); line-height: 1.2; letter-spacing: -.04em; font-weight: 620; }
+#hint { margin: 10px 0 27px; color: #67635e; font-size: 14px; line-height: 1.65; }
+.bezel {
+  width: 100%;
+  aspect-ratio: 6 / 5;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: clamp(5px, 1.35vw, 7px) solid #363638;
+  border-radius: 14% / 17%;
+  background: #030304;
+  box-shadow: 0 0 0 1px #212123, 0 1px 0 2px #fff9, 0 14px 26px -18px #3d302a7a;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: crosshair;
+  -webkit-tap-highlight-color: transparent;
+}
+#avatar { display: block; width: 100%; height: 100%; }
+.feedback { min-height: 48px; margin-top: 9px; display: flex; gap: 8px; align-items: center; justify-content: center; color: #625d59; font-size: 13px; }
+.indicator { width: 7px; height: 7px; border-radius: 50%; background: #77727e; }
+.bezel:not([data-gesture="idle"]):not([data-gesture="loading"]):not([data-gesture="error"]) + .feedback .indicator { background: #6d62a2; box-shadow: 0 0 0 3px #7161a21c; }
+#retry { background: transparent; border: 0; text-decoration: underline; min-height: 40px; }
+dialog {
+  width: min(370px, calc(100% - 34px));
+  max-height: calc(100% - 32px);
+  padding: 23px;
+  border: 1px solid #d8d1c7;
+  border-radius: 20px;
+  background: #fcfaf6;
+  color: inherit;
+  box-shadow: 0 20px 80px #1f1c2529;
+}
+dialog::backdrop { background: #25252b55; }
+.dialog-head { display: flex; justify-content: space-between; align-items: center; }
+h2 { font-size: 21px; margin: 0; }
+.close { border: 0; width: 44px; height: 44px; border-radius: 50%; font-size: 25px; background: transparent; }
+dl { margin: 4px 0 0; }
+dl > div { display: grid; grid-template-columns: 5.5em 1fr; align-items: baseline; border-top: 1px solid #e4ded5; padding: 13px 0; }
+dt { font-size: 14px; font-weight: 620; }
+dd { margin: 0; font-size: 14px; line-height: 1.65; color: #645f5c; }
+@media (max-height: 500px) and (orientation: landscape) {
+  .mast { height: 48px; }
+  main { min-height: 0; padding-top: 6px; }
+  .preview { max-width: 290px; }
+  #hint { margin: 5px 0 12px; }
+}

@@ -2,6 +2,10 @@
 
 ## 使用网页
 
+[手机触摸预览](https://doyoulikelin-wq.github.io/Luis/platform/web/window/)使用蓝发角色和固定黑窗。轻点脸颊或窗沿、长按、按住后往返拖动，或直接划过窗内，都能看到对应反应。眼睛与头部各自跟随触点。GitHub Pages 随 `main` 分支发布。本地启动下方的静态服务后，也可打开[本机角色小窗](http://127.0.0.1:8774/platform/web/window/)。
+
+触摸预览的回归脚本使用 Playwright 和 Chromium。在本机服务运行时执行 `node benchmark/experiments/window_touch.mjs`，可复现四种手势、拖拽折返、越界松手和系统取消。设置 `LUIS_WINDOW_URL` 可改测线上入口。脚本比较眼睛和头部的运动时序，并在渲染画面中测量虹膜和头饰的位置变化。[触摸回归脚本](../benchmark/experiments/window_touch.mjs)
+
 在仓库根目录执行 `python3 -m http.server 8774 --bind 127.0.0.1`，然后打开 [角色动作工作台](http://127.0.0.1:8774/platform/web/)。网页使用浏览器原生模块和画布，采用内置参数化三维假人、固定相机。它服务于动作控制与证据采集，也可以在手机浏览器查看；网页桌面结果不能充当 iOS 原生实测。
 
 1. 在「动作设置」中选择挥手，分别切换正常、前臂拉长、前臂脱节和手臂抖动。可开启骨架、暂停并逐帧查看同一动作阶段。

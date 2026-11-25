@@ -1,5 +1,7 @@
 # Luis
 
+[在手机上打开蓝发角色小窗](https://doyoulikelin-wq.github.io/Luis/platform/web/window/) · 支持点按、长按、长按拖拽和滑动。按住黑窗后左右拖动，中途折回可观察视线和头部的跟随差异。
+
 Luis 是一个面向上半身虚拟角色的制作与运行项目。仓库分为两部分：**benchmark** 定义如何判断一个角色可交付、如何比较模型和工作流；**platform** 在网页播放角色与动作，能导出相同输入供独立复核。iOS 是后续运行端。
 
 | 部分 | 已经可以做什么 | 入口 |
@@ -66,4 +68,4 @@ flowchart LR
 | [Khronos glTF Validator](https://github.com/KhronosGroup/glTF-Validator) · [VBench](https://github.com/Vchitect/VBench) | 文件规范校验与视频时序、外观分项评测解决不同问题；另补本项目需要的关节连接、半身窗口和交互测试。 |
 | [Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai) · [LongMemEval](https://github.com/xiaowu0162/LongMemEval) | 用例、候选运行和评分器独立版本化；记忆须检查跨会话、更新和未知时的回答。 |
 
-本仓库的网页示范形象与视觉测试图片由程序或几何绘图生成。上述社区模型、权重、角色素材和商业商标并未作为 Luis 的演示资产发布。
+蓝发角色小窗使用本项目确认的角色示意图。三维诊断角色与视觉测试样例采用程序绘图。上述社区模型、权重、角色素材和商业商标并未作为 Luis 的演示资产发布。
