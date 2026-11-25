@@ -67,7 +67,7 @@ window.addEventListener('pagehide', event => {
 });
 try {
   const [{createActor}, {connectInteraction}] = await Promise.all([
-    import('./actor.js'), import('./interaction.js'),
+    import('./actor.js'), import('./interaction.js?v=touch-recovery-1'),
   ]);
   actor = await createActor(canvas);
   controller = connectInteraction(surface, showGesture);
